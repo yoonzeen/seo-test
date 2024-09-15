@@ -1,3 +1,4 @@
+import MetaTag from '@/common/MetaTag';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,6 +9,7 @@ const IntroPage = () => {
     }
     return (
         <div>
+            <MetaTag title={'yoonzeen-intro'} descrition={'yoonzeen intro page 입니다'} imgsrc={'https://raw.githubusercontent.com/yoonzeen/seo-test/master/public/og.jpg'} url={'https://yoonzeen-seo-test.netlify.app/intro'} />
             <ul>
                 <li onClick={() => viewPage('/')}>HOME</li>
                 <li onClick={() => viewPage('/intro')}>INTRO</li>
