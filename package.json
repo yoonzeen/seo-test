@@ -23,7 +23,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview", 
+    "postinstall": "npx puppeteer browsers install chrome"
   },
   "eslintConfig": {
     "extends": [
