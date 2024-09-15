@@ -6,6 +6,7 @@ import svgrPlugin from "vite-plugin-svgr";
 import prerender from "@prerenderer/rollup-plugin";
 
 export default defineConfig({
+    base: './',
 	plugins: [react(), viteTsconfigPaths(), svgrPlugin(),    
         prerender({
             routes: ["/", "/intro", "/intro/hobby", "/profile"],
@@ -28,11 +29,6 @@ export default defineConfig({
             },
         }),
     ],
-    resolve: {
-        alias: {
-          "@": path.resolve(__dirname, "./src"),
-        },
-    },
     build: {
         rollupOptions: {
           input: {
