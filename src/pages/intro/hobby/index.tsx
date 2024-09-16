@@ -9,7 +9,7 @@ const HobbyPage = () => {
     }
     return (
         <div>
-            <MetaTag title={'yoonzeen-hobby'} description={'yoonzeen hobby page 입니다'} imgsrc={'https://raw.githubusercontent.com/yoonzeen/seo-test/master/public/og.jpg'} url={'https://yoonzeen-seo-test.netlify.app/hobby'} />
+            <MetaTag title={'yoonzeen-hobby'} description={'yoonzeen hobby page 입니다'} imgsrc={'https://raw.githubusercontent.com/yoonzeen/seo-test/master/public/og.jpg'} url={'https://yoonzeen-seo-test.netlify.app/intro/hobby'} />
             <ul>
                 <li onClick={() => viewPage('/')}>HOME</li>
                 <li onClick={() => viewPage('/intro')}>INTRO</li>
