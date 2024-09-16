@@ -9,7 +9,7 @@ export default defineConfig({
     base: './',
 	plugins: [react(), viteTsconfigPaths(), svgrPlugin(),    
         prerender({
-            routes: ["/", "/intro", "/category/1", "/category/2", "/category/3", "/intro/hobby", "/profile/abcd", ],
+            routes: ["/", "/intro", "/intro/hobby", "/category/1", "/category/2", "/category/3", "/profile/abcd"],
             renderer: "@prerenderer/renderer-puppeteer",
             server: {
               port: 3000,
