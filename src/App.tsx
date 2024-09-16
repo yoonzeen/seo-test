@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import HomePage from './home';
-import IntroPage from './intro';
-import HobbyPage from './intro/hobby';
-import ProfilePage from './profile';
+import HomePage from './pages/home';
+import IntroPage from './pages/intro';
+import HobbyPage from './pages/intro/hobby';
+import ProfilePage from './pages/profile';
+import CategoryPage from './pages/category';
 
 function App() {
   return (
@@ -14,7 +15,10 @@ function App() {
           <Route path="" element={<IntroPage/>}/>
           <Route path="hobby" element={<HobbyPage/>}/>
         </Route>
-        <Route path="/profile" element={<ProfilePage/>} />
+        <Route path="/category">
+          <Route path=":id" element={<CategoryPage />} />
+        </Route>
+        <Route path="/profile/:id" element={<ProfilePage/>} />
       </Routes>
     </BrowserRouter>
   );
