@@ -5,28 +5,25 @@ import viteTsconfigPaths from 'vite-tsconfig-paths';
 import svgrPlugin from "vite-plugin-svgr";
 import prerender from "@prerenderer/rollup-plugin";
 
-export default defineConfig({
-    base: './',
-	plugins: [react(), viteTsconfigPaths(), svgrPlugin(),    
-        prerender({
-            routes: ["/", "/intro", "/intro/hobby", "/category/1", "/category/2", "/category/3", "/profile/abcd"],
-            renderer: "@prerenderer/renderer-puppeteer",
-            server: {
-              port: 3000,
-              host: "localhost",
-            },
-            rendererOptions: {
-              maxConcurrentRoutes: 1,
-              renderAfterTime: 500,
-            },
-            postProcess(renderedRoute) {
-              renderedRoute.html = renderedRoute.html
-                .replace(/http:/i, "https:")
-                .replace(
-                  /(https:\/\/)?(localhost|127\.0\.0\.1):\d*/i,
-                  "https://yoonzeen-seo-test.netlify.app/"
-                );
-            },
-        }),
-    ],
+export default defineConfig(({ mode }) => {
+    return {
+        plugins: [react(), viteTsconfigPaths(), svgrPlugin(),    
+            prerender({
+                routes: ["/", "/intro", "/intro/hobby", "/category/1", "/category/2", "/category/3", "/profile/abcd"],
+                renderer: "@prerenderer/renderer-puppeteer",
+                rendererOptions: {
+                maxConcurrentRoutes: 1,
+                renderAfterTime: 500,
+                },
+                postProcess(renderedRoute) {
+                renderedRoute.html = renderedRoute.html
+                    .replace(/http:/i, "https:")
+                    .replace(
+                    /(https:\/\/)?(localhost|127\.0\.0\.1):\d*/i,
+                    "https://yoonzeen-seo-test.netlify.app/"
+                    );
+                },
+            }),
+        ],
+    }
 });
