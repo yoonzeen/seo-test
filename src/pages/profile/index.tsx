@@ -16,9 +16,9 @@ const ProfilePage = () => {
                 <li onClick={() => viewPage('/intro')}>INTRO</li>
                 <li onClick={() => viewPage('/intro/hobby')}>HOBBY</li>
                 <li onClick={() => viewPage('/profile/abcd')}>PROFILE</li>
-                <li onClick={() => viewPage('/category/1')}>CATEGORY1</li>
-                <li onClick={() => viewPage('/category/2')}>CATEGORY2</li>
-                <li onClick={() => viewPage('/category/3')}>CATEGORY3</li>
+                <li onClick={() => viewPage('/category/1/35')}>CATEGORY1</li>
+                <li onClick={() => viewPage('/category/2/123')}>CATEGORY2</li>
+                <li onClick={() => viewPage('/category/3/2424')}>CATEGORY3</li>
             </ul>
             <h1>PROFILE ~!? : {param.id}</h1>
         </div>
